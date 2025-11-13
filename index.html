@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quantum Entanglement Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Quantum Entanglement — Interactive</h1>
+      <p class="subtitle">Pick a Bell state, choose a basis, add noise and test correlations</p>
+    </header>
+
+    <main class="card">
+      <section class="controls">
+        <label>Bell state</label>
+        <select id="bellState">
+          <option value="phiPlus">Φ⁺</option>
+          <option value="phiMinus">Φ⁻</option>
+          <option value="psiPlus">Ψ⁺</option>
+          <option value="psiMinus">Ψ⁻</option>
+        </select>
+
+        <label>Measurement basis</label>
+        <select id="basis">
+          <option value="Z">Z (computational)</option>
+          <option value="X">X (Hadamard)</option>
+        </select>
+
+        <label>Noise (0 — 1)</label>
+        <input id="noise" type="range" min="0" max="1" step="0.01" value="0">
+        <div class="noise-value">Noise: <span id="noiseVal">0.00</span></div>
+
+        <button id="measureBtn">Measure</button>
+
+        <div class="result" id="resultText">No measurement yet.</div>
+      </section>
+
+      <section class="stats">
+        <h3>Live Stats</h3>
+        <div id="statsArea">Loading...</div>
+        <h3>Leaderboard</h3>
+        <ol id="leaderboard">Loading...</ol>
+      </section>
+    </main>
+
+    <footer class="footer">Built for coursework — Team project</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
